@@ -27,7 +27,7 @@
     background-color: var(--mirr-cursor-color);
     position: absolute;
     border-radius: 0px;
-    
+
 }
 .cursor__follower{
     transition: transform 800ms;
@@ -81,9 +81,9 @@ mirrFollower.classList.add('mirrcursor', 'cursor__follower')
 root.appendChild(mirrFollower)
 
 //Mirror Cursor Y
-const mirrFollowerY = document.createElement ('div')
+/*const mirrFollowerY = document.createElement ('div')
 mirrFollowerY.classList.add('cursor', 'cursor__follower')
-root.appendChild(mirrFollowerY)
+root.appendChild(mirrFollowerY)*/
 
 root.addEventListener('mousemove', (e) =>{
     setPosition(follower, e)
