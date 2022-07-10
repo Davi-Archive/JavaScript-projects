@@ -5,10 +5,10 @@
         <meta charset="utf-8">
         <meta name="viewport" width="width=device-width, initial-scale=1.0">
         <style>
-@import url('https://fonts.googleapis.com/css?family=Anton');
 :root{
 --cursor-color: #f44336;
 --html-background: #2d2b2b;
+--mirr-cursor-color: blue;
 }
 .cursor{ /* Transforma cursor em bola*/
     left: 0;
@@ -19,8 +19,18 @@
     position: absolute;
     border-radius: 5px;
 }
+.mirrcursor{
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    background-color: var(--mirr-cursor-color);
+    position: absolute;
+    border-radius: 0px;
+    
+}
 .cursor__follower{
-    transition: transform .4s;
+    transition: transform 800ms;
     width: 6px;
     height: 6px;
 }
@@ -34,7 +44,7 @@ html{
 }
 /* font stuff */
 h1 {
-  font-family: 'Anton', 'helvetica', sans-serif;
+  font-family: 'helvetica', sans-serif;
   font-size: 100px;
   letter-spacing: 12px;
   line-height: 1;
@@ -53,50 +63,44 @@ h1 span {
 
     <!-- começo do código javascript *-->
     <script>
-const root = document.querySelector("html")
+const root = document.querySelector('html')
 
+// Real cursor element
 const cursor = document.createElement("div")
 cursor.classList.add("cursor")
 root.appendChild(cursor)
-//segue cursor
 
+//segue cursor
 const follower = document.createElement("div")
     follower.classList.add('cursor', 'cursor__follower')
     root.appendChild(follower)
 
+// Mirror Cursor X
+const mirrFollower = document.createElement('div')
+mirrFollower.classList.add('mirrcursor', 'cursor__follower')
+root.appendChild(mirrFollower)
+
+//Mirror Cursor Y
+const mirrFollowerY = document.createElement ('div')
+mirrFollowerY.classList.add('cursor', 'cursor__follower')
+root.appendChild(mirrFollowerY)
+
 root.addEventListener('mousemove', (e) =>{
     setPosition(follower, e)
     setPosition(cursor, e)
+    mirPosition(mirrFollower, e)
+    /*mirPositionY(mirrFollowerY, e)*/
 })
 
 function setPosition(element, e){
-   element.style.transform = 
-   'translate3d(${e.clientX}px, ${e.clientY}px, 0)'
+   element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
 }
 
-/*
-const root = document.querySelector('html')
-
-// Real cursor element
-const cursor = document.createElement('div')
-cursor.classList.add('cursor')
-root.appendChild(cursor)
-
-// Following extra cursor element
-const follower = document.createElement('div')
-follower.classList.add('cursor', 'cursor__follower')
-root.appendChild(follower)
-
-
-root.addEventListener('mousemove', (e) => {
-  setPosition(follower, e)
-  setPosition(cursor, e)
-})
-
-function setPosition(element, e) {
-  element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
+function mirPosition(element, e){
+   element.style.transform = `translate3d(${e.clientY}px, ${e.clientX}px, 0)`
 }
-
-*/
+/* function mirPositionY(element, e){
+    element.style.transform =`translate3d(${e.clientY}px, ${e.clientY}px, 0)`
+} */
     </script>
 </html>
