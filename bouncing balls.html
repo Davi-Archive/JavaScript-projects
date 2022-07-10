@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" >
+        <style>
+body {
+ margin: 0px;
+ background-color: rgb(56,220, 250);
+ overflow: hidden;
+}        
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <p id="teste"></p>
+    </body>
+    <script>
+ /* inicio do java */
+let canvas
+document.getElementById('canvas') /* seleciona canvas */
+let c = canvas.getContext("2d")
+let tx = window.innerWidth
+let ty = window.innerHeight
+
+canvas.width = tx;
+canvas.height = ty;
+
+let mousex = 0;
+let mousey = 0;
+
+addEventListener('mouseclick', function(){
+    mousex = event.clientX;
+    mousey = event.clientY;
+})
+    coords= "X coords: " + x + ", Y coords: " + y
+    document.getElementById('p').innerHTML = coords;
+
+/* GERANDO CORES ALEATORIAS */
+var grav = 0.99;
+c.strokeWidth=5;
+function randomColor() {
+  return (
+    "rgba(" +
+    Math.round(Math.random() * 250) +
+    "," +
+    Math.round(Math.random() * 250) +
+    "," +
+    Math.round(Math.random() * 250) +
+    "," +
+    Math.ceil(Math.random() * 10) / 10 +
+    ")"
+  );
+}
+    </script>
+</html>
