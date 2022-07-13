@@ -6,29 +6,29 @@
     </head>
     <body>
     <div class="media-bloco">
-        <h1>Cálculo da Média Anual</h1>
+        <h1>Cálculo da Média Escolar Anual</h1>
         <caption>Notas:</caption>
             <table id="tabela-notas">
                 <tr>
                     <td>Primeiro Bimestre:</td>
-                    <td><input type="number" id="nota1" min="0" max="10" placeholder="Primeira nota aqui."></td>
+                    <td><input type="number" id="nota1" min="0" max="10" placeholder="Primeira nota aqui." value="0"></td>
                 </tr>
                 <tr>
                     <td>Segundo Bimestre:</td>
-                    <td><input type="number" id="nota2" min="0" max="10" placeholder="Segunda nota aqui." ></td>
+                    <td><input type="number" id="nota2" min="0" max="10" placeholder="Segunda nota aqui." value="0"></td>
                 </tr>
                 <tr>
                     <td>Terceiro Bimestre:</td>
-                    <td><input type="number" id="nota3" min="0" max="10" placeholder="Terceira nota aqui."></td>
+                    <td><input type="number" id="nota3" min="0" max="10" placeholder="Terceira nota aqui." value="0"></td>
                 </tr>
                 <tr>
                     <td>Quarto Bimestre:</td>
-                    <td><input type="number" id="nota4" min="0" max="10" placeholder="Quarta nota aqui." ></td>
+                    <td><input type="number" id="nota4" min="0" max="10" placeholder="Quarta nota aqui." value="0"></td>
                 </tr>
             </table>
             <div class="botoes">
             <button type="submit" id="media-btn" onclick="adicionaNotas()">Média</button>
-            <button type="submit" id="limpar-btn" onclick="">Limpar</button>
+            <button type="submit" id="limpar-btn" onclick="limpar()">Limpar</button>
             </div>
             <div><h2 id="texto-media">MÉDIA</h2></div>
     </div>
