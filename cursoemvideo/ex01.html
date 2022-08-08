@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta viewport="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="iexedge" />
+    <title>Titulo da page</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font: normal 20px Arial;
+        }
+
+        h1 {
+            color: yellow;
+        }
+    </style>
+
+<body>
+    <h1>
+        Olá, Mundo!
+    </h1>
+    <p id="nome">Subtitulo</p>
+    <script>
+        /* window.alert('msg')
+        window.confirm('oki doki poki') */
+        let n1 = Number(window.prompt('Digite o 1° numero'))  //converte pra numero
+        let n2 = parseFloat(window.prompt('Digite o 2° numero'))
+        let result = n2 + n1;
+        window.alert(`O resultado da some de ${n1} com ${n2} é ${result}`) // template string =/= concatenação ('..soma' + n1 +' com ...')
+        document.getElementById('nome').innerHTML = result
+    </script>
+</body>
+</head>
+
+</html>
