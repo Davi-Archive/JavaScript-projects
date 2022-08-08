@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cola Javascript</title>
+</head>
+
+<body>
+    <style>
+        .wrapper {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template: 1fr 1fr / 10% 1fr 1fr 1%;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        table{
+            font-size: 1rem;
+            margin: 10px;
+            text-align: center;
+        }
+        .tabela-primario {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .tabela-ordem-primario{
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        /* segunda coluna */
+        .tabela-operadores {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        .tabela-ordem-logica{
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        td,
+        th,
+        tr {
+            border: 1px solid black;
+        }
+    </style>
+    <div class="wrapper">
+        <div class="tabela-primario">
+            <div class="titulo-primario">
+                <h1>Tipos Primários</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>
+                        Tipos
+                    </th>
+                    <th colspan="2">
+                        Significado
+                    </th>
+                </tr>
+                <tr>
+                    <td>number</td>
+                    <td>Infinity</td>
+                    <td>NaN</td>
+                </tr>
+                <tr>
+                    <td>String</td>
+                    <td>' text '</td>
+                    <td>' 123 '</td>
+                </tr>
+                <tr>
+                    <td>Boolean</td>
+                    <td>True</td>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <td>Null</td>
+                    <td>Variável declarada</td>
+                    <td>Variável tem valor nulo</td>
+                </tr>
+                <tr>
+                    <td>undefined</td>
+                    <td>Variavel não declarada</td>
+                    <td>Variavel não existe</td>
+                </tr>
+                <tr>
+                    <td>Object</td>
+                    <td>{ }</td>
+                    <td>Array []</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>sync</td>
+                    <td>Async</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tabela-ordem-primario">
+            <div class="titulo-ordem-operadores">
+                <h1>Ordem dos Operadores Primários</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>
+                        Ordem
+                    </th>
+                    <th colspan="3">
+                        Operadores
+                    </th>
+                </tr>
+                <tr>
+                    <td rowspan="4">||<br/>||<br/>||<br/>||<br/>_||_<br/>\\//<br/>\/</td>
+                    <td colspan="3">(&nbsp; &nbsp; &nbsp;)</td>
+                </tr>
+                <tr>
+                    <td colspan="3">**</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>/</td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td colspan="2">-</td>
+                </tr>
+                <tr>
+                    <td colspan="4">=======></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tabela-operadores">
+            <div class="titulo-operadores">
+                <h1>Tipos de Operadores</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>
+                        Tipos
+                    </th>
+                    <th colspan="6">
+                        Significado
+                    </th>
+                </tr>
+                <tr>
+                    <td>Aritméticos</td>
+                    <td>+</td>
+                    <td>-</td>
+                    <td>*</td>
+                    <td>/</td>
+                    <td>**</td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td>Atribuição</td>
+                    <td>=</td>
+                    <td>+=</td>
+                    <td>-=</td>
+                    <td>++n</td>
+                    <td>--n</td>
+                    <td>%=</td>
+                </tr>
+                <tr>
+                    <td>Relacionais</td>
+                    <td>==</td>
+                    <td>></td>
+                    <td><</td>
+                    <td>></td>
+                    <td>===</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Lógicos</td>
+                    <td>!=</td>
+                    <td>&&</td>
+                    <td>!==</td>
+                    <td colspan="3">||</td>
+                </tr>
+                <tr>
+                    <td>Ternário</td>
+                    <td colspan="6">condição  ? true : false</td>
+
+                </tr>
+                <tr>
+                    <td>Object</td>
+                    <td colspan="3">{ }</td>
+                    <td colspan="3">Array []</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td colspan="3">sync</td>
+                    <td colspan="3">Async</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tabela-ordem-logica">
+            <div class="titulo-ordem-logica">
+                <h1>Ordem dos Operadores Lógicos</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>
+                        Ordem
+                    </th>
+                    <th colspan="2">
+                        Operadores
+                    </th>
+                </tr>
+                <tr>
+                    <td rowspan="3">||<br/>||<br/>||<br/>||<br/>_||_<br/>\\//<br/>\/</td>
+                    <td>!</td>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                </tr>
+                <tr>
+                    <td colspan="2">=======></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
