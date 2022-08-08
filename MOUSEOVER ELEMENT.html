@@ -1,106 +1,114 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Mouseover Element</title>
-        <meta charset="utf-8">
-        <meta name="viewport" width="width=device-width, initial-scale=1.0">
-        <style>
-:root{
---cursor-color: #f44336;
---html-background: #2d2b2b;
---mirr-cursor-color: blue;
-}
-.cursor{ /* Transforma cursor em bola*/
-    left: 0;
-    top: 0;
-    width: 10px;
-    height: 10px;
-    background-color: var(--cursor-color);
-    position: absolute;
-    border-radius: 5px;
-}
-.mirrcursor{
-    left: 0;
-    top: 0;
-    width: 100px;
-    height: 100px;
-    background-color: var(--mirr-cursor-color);
-    position: absolute;
-    border-radius: 0px;
 
-}
-.cursor__follower{
-    transition: transform 800ms;
-    width: 6px;
-    height: 6px;
-}
-html{
-    cursor: none;
-    background-color: var(--html-background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-/* font stuff */
-h1 {
-  font-family: 'helvetica', sans-serif;
-  font-size: 100px;
-  letter-spacing: 12px;
-  line-height: 1;
-  text-align: center;
-}
+<head>
+    <title> Mouseover Element</title>
+    <meta charset="utf-8">
+    <meta name="viewport" width="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --cursor-color: #f44336;
+            --html-background: #2d2b2b;
+            --mirr-cursor-color: blue;
+        }
 
-h1 span {
-  letter-spacing: 15px;
-}
+        .cursor {
+            /* Transforma cursor em bola*/
+            left: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background-color: var(--cursor-color);
+            position: absolute;
+            border-radius: 5px;
+        }
 
-        </style>
-    </head>
-    <body>
-        <h1>CUSTOM<br><span>CURSOR</span></h1>
-    </body>
+        .mirrcursor {
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: var(--mirr-cursor-color);
+            position: absolute;
+            border-radius: 0px;
 
-    <!-- começo do código javascript *-->
-    <script>
-const root = document.querySelector('html')
+        }
 
-// Real cursor element
-const cursor = document.createElement("div")
-cursor.classList.add("cursor")
-root.appendChild(cursor)
+        .cursor__follower {
+            transition: transform 800ms;
+            width: 6px;
+            height: 6px;
+        }
 
-//segue cursor
-const follower = document.createElement("div")
+        html {
+            cursor: none;
+            background-color: var(--html-background);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* font stuff */
+        h1 {
+            font-family: 'helvetica', sans-serif;
+            font-size: 100px;
+            letter-spacing: 12px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        h1 span {
+            letter-spacing: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CUSTOM<br><span>CURSOR</span></h1>
+</body>
+
+<!-- começo do código javascript *-->
+<script>
+    const root = document.querySelector('html')
+
+    // Real cursor element
+    const cursor = document.createElement("div")
+    cursor.classList.add("cursor")
+    root.appendChild(cursor)
+
+    //segue cursor
+    const follower = document.createElement("div")
     follower.classList.add('cursor', 'cursor__follower')
     root.appendChild(follower)
 
-// Mirror Cursor X
-const mirrFollower = document.createElement('div')
-mirrFollower.classList.add('mirrcursor', 'cursor__follower')
-root.appendChild(mirrFollower)
+    // Mirror Cursor X
+    const mirrFollower = document.createElement('div')
+    mirrFollower.classList.add('mirrcursor', 'cursor__follower')
+    root.appendChild(mirrFollower)
 
-//Mirror Cursor Y
-/*const mirrFollowerY = document.createElement ('div')
-mirrFollowerY.classList.add('cursor', 'cursor__follower')
-root.appendChild(mirrFollowerY)*/
+    //Mirror Cursor Y
+    /*const mirrFollowerY = document.createElement ('div')
+    mirrFollowerY.classList.add('cursor', 'cursor__follower')
+    root.appendChild(mirrFollowerY)*/
 
-root.addEventListener('mousemove', (e) =>{
-    setPosition(follower, e)
-    setPosition(cursor, e)
-    mirPosition(mirrFollower, e)
-    /*mirPositionY(mirrFollowerY, e)*/
-})
+    root.addEventListener('mousemove', (e) => {
+        setPosition(follower, e)
+        setPosition(cursor, e)
+        mirPosition(mirrFollower, e)
+        /*mirPositionY(mirrFollowerY, e)*/
+    })
 
-function setPosition(element, e){
-   element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
-}
+    function setPosition(element, e) {
+        element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
+    }
 
-function mirPosition(element, e){
-   element.style.transform = `translate3d(${e.clientY}px, ${e.clientX}px, 0)`
-}
+    function mirPosition(element, e) {
+        element.style.transform = `translate3d(${e.clientY}px, ${e.clientX}px, 0)`
+    }
 /* function mirPositionY(element, e){
-    element.style.transform =`translate3d(${e.clientY}px, ${e.clientY}px, 0)`
-} */
-    </script>
+        element.style.transform =`translate3d(${e.clientY}px, ${e.clientY}px, 0)`
+    } */
+</script>
+
 </html>
